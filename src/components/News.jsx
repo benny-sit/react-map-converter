@@ -17,8 +17,6 @@ function News({ selectedCountry }) {
   useEffect(() => {
     const abortController = new AbortController();
 
-    console.log(iso2);
-
     if (!NEWS_API_ISO2.includes(iso2)) {
       setIsError(true);
       setArticles([]);
@@ -29,13 +27,13 @@ function News({ selectedCountry }) {
 
     const fetchData = async () => {
       setIsLoading(true);
-      setIsError(false);
       try {
         const ans = await fetch(url, { signal: abortController.signal }).then(
           (data) => data.json()
         );
 
         setArticles(ans.articles || []);
+        setIsError(false);
       } catch (error) {
         console.log('ERROR GETTING ARTICLES', error);
         setIsError(true);
@@ -64,7 +62,7 @@ function News({ selectedCountry }) {
             {iso2.toUpperCase()}
           </span>
         </h2>
-        <span className="w-14 h-1 scale-x-0 rounded-full absolute -bottom-1 left-2 bg-blue-400 animate-scale-x-full origin-left"></span>
+        <span className="w-14 h-1 scale-x-0 rounded-full absolute bottom-0 left-2 bg-blue-400 animate-scale-x-full origin-left"></span>
       </div>
       <div className="max-w-4xl grid grid-cols-1 min-[600px]:grid-cols-2 min-[800px]:grid-cols-3 gap-4 mx-auto px-2 justify-items-center place-content-center relative">
         {articles?.length > 0 && !isLoading ? (

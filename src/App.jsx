@@ -35,7 +35,6 @@ function App() {
   const [selectedCountry, setSelectedCountry] = useState('USA');
 
   function handleSelectChange(selected) {
-    console.log(selected);
     setSelectedCurrency(selected.value.currency);
     setSelectedCountry(selected.value.country);
   }
