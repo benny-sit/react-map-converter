@@ -1,8 +1,9 @@
-# React + Vite
+# CONVERTI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Currency Convertor That Displays A Map With The Converted Values For Each Country**
 
-Currently, two official plugins are available:
+---
+### The live version of the website [Converti](https://converti.online)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+Build With react-simple-maps and react-tooltip
