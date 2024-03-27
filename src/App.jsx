@@ -7,6 +7,9 @@ import Footer from './components/ui/Footer';
 // import MapChart from './components/MapChart';
 import { ISO3 } from './assets/constants';
 
+import globeSvg from '/imgs/language.svg';
+import { Helmet } from 'react-helmet';
+
 const MapChart = lazy(() => import('./components/MapChart'));
 const TooltipsWithConversion = lazy(() =>
   import('./components/TooltipsWithConversion')
@@ -41,7 +44,33 @@ function App() {
 
   return (
     <>
+      <Helmet>
+        <meta
+          name="keywords"
+          content="CURRENCY CONVERTOR, SHOW CURRENCIES ON MAP, GET ALL CURRENCIES"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Convert currency on a map" />
+        <meta
+          property="og:description"
+          content="Map currency converter. Shows to you how much your currency worth worldwide. Convert to any currency simply by click."
+        />
+        <meta property="og:image" content="https://ibb.co/0nwHm4N" />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:title" content="Convert currency on a map" />
+        <meta
+          name="twitter:description"
+          content="Map currency converter. Shows to you how much your currency worth worldwide. Convert to any currency simply by click."
+        />
+        <meta name="twitter:image" content="https://ibb.co/0nwHm4N" />
+        <meta name="twitter:card" content="https://ibb.co/0nwHm4N" />
+      </Helmet>
       <Header />
+      <h1 className="mt-4 mb-1 mx-auto max-w-4xl text-3xl text-center">
+        See How Much Your Currency Worth
+      </h1>
+      <img src={globeSvg} alt="globe svg" className="mx-auto" width={40} />
       <div className="max-w-4xl mx-auto px-2 sm:px-0 w-full mt-8 flex flex-col sm:flex-row justify-center items-stretch gap-2">
         <div className="relative self-stretch">
           <input

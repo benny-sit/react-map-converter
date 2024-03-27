@@ -18,7 +18,7 @@ const TooltipsWithConversion = ({
     const abortController = new AbortController();
     const url = `${import.meta.env.VITE_REDIS_URL}/conversion/${(
       selectedCurrency || ''
-    ).toUpperCase()}`;
+    )?.toUpperCase()}`;
 
     const fetchData = async () => {
       setIsLoading(true);

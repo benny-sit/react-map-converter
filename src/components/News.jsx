@@ -59,15 +59,15 @@ function News({ selectedCountry }) {
         <h2 className="text-2xl font-semibold -mt-3 " id="home-news">
           News{' '}
           <span className="font-bold text-base text-gray-500/60 inline-block py-2 px-3 bg-slate-50 rounded-md">
-            {iso2.toUpperCase()}
+            {iso2?.toUpperCase()}
           </span>
         </h2>
         <span className="w-14 h-1 scale-x-0 rounded-full absolute bottom-0 left-2 bg-blue-400 animate-scale-x-full origin-left"></span>
       </div>
       <div className="max-w-4xl grid grid-cols-1 min-[600px]:grid-cols-2 min-[800px]:grid-cols-3 gap-4 mx-auto px-2 justify-items-center place-content-center relative">
         {articles?.length > 0 && !isLoading ? (
-          articles.map((article) => (
-            <Card key={article?.url} article={article} />
+          articles.map((article, idx) => (
+            <Card key={article?.url + idx} article={article} />
           ))
         ) : (
           <>
@@ -78,7 +78,7 @@ function News({ selectedCountry }) {
         )}
         {isError && (
           <div className="absolute top-20 left-40 right-40 py-3 px-4 text-center border-b-red-400 border-b-4 bg-white rounded-lg text-xl font-bold text-gray-600">
-            Our Api Not Supports News For - <span>{iso2.toUpperCase()}</span>
+            Our Api Not Supports News For - <span>{iso2?.toUpperCase()}</span>
           </div>
         )}
       </div>
